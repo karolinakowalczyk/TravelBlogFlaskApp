@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+{% block title %}
+Login
+{% endblock %}
+{% block content %}
+<div class="container">
+    <h1 class="pb-2 page-header">Register</h1>
+    <form action="/register" method="POST">
+        <div class="form-group py-2">
+            <label for="email">{{ registerForm.email.label }}</label>
+            {{ registerForm.email(class_='form-control') }}
+        </div>
+        <div class="form-group py-2">
+            <label for="password">{{ registerForm.password.label }}</label>
+            {{ registerForm.password(class_='form-control') }}
+            {% for error in registerForm.password.errors %}
+            <span class="error">{{ error }}</span>
+            {% endfor %}
+        </div>
+        <div class="form-group py-2">
+            <label for="confirm">{{ registerForm.confirm.label }}</label>
+            {{ registerForm.confirm(class_='form-control') }}
+        </div>
+        <button type="submit" name="register" class="main-btn p-2">Register</button>
+    </form>
+</div>
+{% endblock %}

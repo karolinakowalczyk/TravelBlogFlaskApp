@@ -1,0 +1,39 @@
+:root {
+    --primary: #F46F4C;
+}
+
+.hashtag-btn {
+    pointer-events: all;
+    cursor: pointer;
+    margin-left: 0.25em;
+    padding: 0.1em;
+    background-color: var(--primary);
+    color: white;
+}
+
+
+.hashtag-el {
+    display: flex;
+    align-items: center;
+}
+
+.hashtag-p {
+    margin-top: 1em;
+}
+
+.error {
+    color: red;
+}
+
+.uploaded-img {
+    width: 50%;
+    height: auto;
+}
+
+@media screen and (max-width: 768px) {
+    .uploaded-img {
+        width: 100%;
+        height: auto;
+    }
+
+}

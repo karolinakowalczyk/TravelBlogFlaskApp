@@ -1,0 +1,24 @@
+:root {
+    --primary: #F46F4C;
+}
+
+html * {
+    font-family: 'Sen', Arial, sans-serif;
+}
+
+.navbar .navbar-brand {
+    color: var(--primary);
+    font-family: 'Playfair Display', serif;
+    font-size: 1.375rem;
+}
+
+#site-body {
+    /* margin-top: 140px; */
+    margin-top: 8.75rem;
+}
+
+@media screen and (max-width: 785px) {
+    #site-body {
+        margin-top: 12rem;
+    }
+}
