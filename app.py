@@ -1,13 +1,10 @@
+from flask import Flask, render_template
+from views import site
 import os
-
-from flask import Flask
 
 app = Flask(__name__)
 
-@app.route('/')
-def hello_world():
-    target = os.environ.get('TARGET', 'World')
-    return 'Hello {}!\n'.format(target)
+app.register_blueprint(site, url_prefix="")
 
 if __name__ == "__main__":
     app.run()
