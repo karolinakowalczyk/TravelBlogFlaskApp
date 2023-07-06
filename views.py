@@ -51,13 +51,14 @@ def login():
         email = request.form.get('email')
         password = request.form.get('password')
         try:
+            print('przed')
             auth.sign_in_with_email_and_password(email, password)
-            print(auth.sign_in_with_email_and_password(email, password))
+            print('po')
             session['user'] = auth.current_user['localId']
             print('Log in successfully')
             return redirect('/')
-        except:
-            print(auth.current_user)
+        except Exception as e:
+            print(e)
             print('Failed to log in')
             return redirect('/login')
 

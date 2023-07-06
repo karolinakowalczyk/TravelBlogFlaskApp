@@ -4,6 +4,8 @@ import os
 
 app = Flask(__name__)
 
+app.secret_key = 'secret'
+
 app.register_blueprint(site, url_prefix="")
 
 if __name__ == "__main__":
