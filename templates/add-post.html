@@ -37,7 +37,7 @@ Add Post
         <div class="form-group py-2">
             {% if fileUrl %}
             <div>
-                <img src="{{ url_for('static', filename=fileUrl)}}" class="uploaded-img">
+                <img src={{ fileUrl }} class="uploaded-img">
             </div>
             {% endif %}
         </div>

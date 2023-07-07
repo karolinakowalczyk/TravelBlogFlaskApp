@@ -37,7 +37,6 @@ def register():
         password = registerForm.password.data
         try:
             auth.create_user_with_email_and_password(email, password)
-            print('success register')
             return redirect('/login')
         except:
             return redirect('/register')
@@ -51,15 +50,11 @@ def login():
         email = request.form.get('email')
         password = request.form.get('password')
         try:
-            print('przed')
             auth.sign_in_with_email_and_password(email, password)
-            print('po')
             session['user'] = auth.current_user['localId']
-            print('Log in successfully')
             return redirect('/')
         except Exception as e:
             print(e)
-            print('Failed to log in')
             return redirect('/login')
 
     return render_template('login.html')
@@ -128,19 +123,27 @@ def addPost():
         addSubmit = request.form.get("add")
         uploadSubmit = request.form.get("upload")
         if uploadSubmit is not None:
-            # print("add photo")
+            print("add photo")
 
             image = addPostForm.images.data
+
+            print(image)
             if image is not None:
 
                 # filename = photos.save(image)
-                # blob = bucket.blob('images/' + filename)
+                print(image.filename)
+                #filename = generate_unique_filename(image.filename)
+                #blob = bucket.blob('images/' + filename)
                 # blob.upload_from_filename(
                 #     absolutePath + '\\static\\uploads\\' + filename)
-                # blob.make_public()
+                filename = image.filename
+                blob = bucket.blob('images/' + filename)
+                blob.upload_from_string(image.read(), content_type='image/jpeg')
+                blob.make_public()
 
-                # fileUrl = url_for('getFile', filename=filename)
-                fileUrl = "yes"
+                #fileUrl = url_for('site.getFile', filename=filename)
+                fileUrl = blob.public_url
+                print(fileUrl)
             else:
                 fileUrl = None
 
