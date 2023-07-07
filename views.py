@@ -1,7 +1,6 @@
 import datetime
 from flask import Blueprint, Flask, send_from_directory, session, render_template, request, redirect, flash, url_for
 from firebaseConfig import getAuth, getDb, getBucket
-#from flask_uploads import IMAGES, UploadSet, configure_uploads
 import os
 
 
@@ -17,12 +16,6 @@ bucket = getBucket()
 absolutePath = os.path.dirname(__file__)
 
 site = Blueprint('site', __name__, static_folder="static", template_folder='templates')
-
-
-# app.config["UPLOADED_PHOTOS_DEST"] = 'src/static/uploads'
-
-# photos = UploadSet('photos', IMAGES)
-# configure_uploads(app, photos)
 
 @site.route("/")
 def home():
@@ -123,27 +116,12 @@ def addPost():
         addSubmit = request.form.get("add")
         uploadSubmit = request.form.get("upload")
         if uploadSubmit is not None:
-            print("add photo")
-
             image = addPostForm.images.data
-
-            print(image)
             if image is not None:
-
-                # filename = photos.save(image)
-                print(image.filename)
-                #filename = generate_unique_filename(image.filename)
-                #blob = bucket.blob('images/' + filename)
-                # blob.upload_from_filename(
-                #     absolutePath + '\\static\\uploads\\' + filename)
-                filename = image.filename
                 blob = bucket.blob('images/' + filename)
                 blob.upload_from_string(image.read(), content_type='image/jpeg')
                 blob.make_public()
-
-                #fileUrl = url_for('site.getFile', filename=filename)
                 fileUrl = blob.public_url
-                print(fileUrl)
             else:
                 fileUrl = None
 
