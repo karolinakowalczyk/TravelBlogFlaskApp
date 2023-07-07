@@ -1,5 +1,5 @@
 import datetime
-from flask import Blueprint, Flask, send_from_directory, session, render_template, request, redirect, flash, url_for
+from flask import Blueprint, Flask, session, render_template, request, redirect, flash, url_for
 from firebaseConfig import getAuth, getDb, getBucket
 import os
 
@@ -96,20 +96,11 @@ def removeHashtag():
     hashtags.remove(hashtag['hashtag'])
     return hashtags
 
-
-@ site.route('/uploads/<filename>')
-def getFile(filename):
-    #return send_from_directory(app.config["UPLOADED_PHOTOS_DEST"], filename)
-    return send_from_directory('test.jpg', filename)
-
-
 @ site.route("/add-post", methods=['POST', 'GET'])
 def addPost():
     global fileUrl
     fileUrl = None
     global filename
-
-    # hashtags = []
     addPostForm = AddPostForm()
 
     if request.method == 'POST' and addPostForm.validate():
@@ -118,6 +109,7 @@ def addPost():
         if uploadSubmit is not None:
             image = addPostForm.images.data
             if image is not None:
+                filename = image.filename
                 blob = bucket.blob('images/' + filename)
                 blob.upload_from_string(image.read(), content_type='image/jpeg')
                 blob.make_public()
