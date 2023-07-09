@@ -17,7 +17,15 @@ Home
         <p class="mt-5">You're travel lover? It's perfect place for you! This blog is about my travel experiences and
             tips. Do you
             want to join this trip?</p>
-        <button class="p-3 mt-5 main-btn">Expole the Blog</button>
+        {% if session.user %}
+        <button class="p-3 mt-5 main-btn">
+            <a class="main-href" href="{{ url_for('site.myPosts') }}">Expole the Blog</a>
+        </button>
+        {% else %}
+        <button class="p-3 mt-5 main-btn">
+            <a class="main-href" href="{{ url_for('site.login') }}">Expole the Blog</a>
+        </button>
+        {% endif %}
     </div>
 </div>
 

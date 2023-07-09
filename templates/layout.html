@@ -33,12 +33,6 @@
                         <li class="nav-item">
                             <a class="nav-link" href="{{ url_for('site.home') }}">Home</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">About</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Contact</a>
-                        </li>
                         {% if session.user %}
                         <li class="nav-item">
                             <a class="nav-link" href="{{ url_for('site.myPosts') }}">My Posts</a>
