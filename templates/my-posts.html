@@ -8,7 +8,7 @@ My Posts
     <button class="main-btn p-3">
         <a class="main-href" href="{{ url_for('site.addPost') }}">Add new post</a>
     </button>
-    <div class="d-flex flex-wrap">
+    <div class="d-flex flex-wrap justify-content-center">
         {% for post in userPostsData %}
         <div class="card m-3 my-post-card">
             {% if post["image"] %}
