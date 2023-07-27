@@ -1,9 +1,25 @@
+@import "./add-post.css";
+@import "./home.css";
+
 :root {
     --primary: #F46F4C;
 }
 
 html * {
     font-family: 'Sen', Arial, sans-serif;
+}
+
+#body-content {
+    min-height: calc(100vh - 49px);
+    display: flex;
+    flex-direction: column;
+}
+
+footer {
+    margin-top: auto;
+    text-align: center;
+    background-color: var(--primary);
+    color: white;
 }
 
 .navbar .navbar-brand {
@@ -13,8 +29,8 @@ html * {
 }
 
 #site-body {
-    /* margin-top: 140px; */
-    margin-top: 8.75rem;
+    margin-top: 140px;
+
 }
 
 @media screen and (max-width: 785px) {

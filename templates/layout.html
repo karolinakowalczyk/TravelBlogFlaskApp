@@ -1,25 +1,27 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
     <meta charset="utf-8" />
-    <meta name="description" content="Travel blog">
+    <meta name="description" content="{% block description %}{% endblock %}">
     <meta name="keywords" content="blog, travel, world">
     <meta name="author" content="Karolina Kowalczyk">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}{% endblock %}</title>
+    <link rel="shortcut icon" href="{{ url_for('static', filename='images/favicon.ico') }}">
+    <link rel="apple-touch-icon" href="{{ url_for('static', filename='images/apple-touch-icon.png') }}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Sen&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css')}}" />
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/home.css')}}" />
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/add-post.css')}}" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
 </head>
+<a href="https://www.flaticon.com/free-icons/travel" title="travel icons">Travel icons created by Icon Pond -
+    Flaticon</a>
 
 <body>
-    <div class="body-content">
+    <div id="body-content">
         <nav class="navbar navbar-expand-sm navbar-light fixed-top bg-light p-5">
             <div class="container-fluid">
                 <a class="navbar-brand" href="{{ url_for('site.home') }}">360 <span>&#176;</span> TRAVEL
@@ -57,6 +59,10 @@
             {% endblock %}
         </div>
     </div>
+    <footer>
+        <a target="_blank" href="https://icons8.com/icon/CHdzWZyJzlf4/around-the-globe">Around the Globe</a> icon by <a
+            target="_blank" href="https://icons8.com">Icons8</a>
+    </footer>
 </body>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N"
