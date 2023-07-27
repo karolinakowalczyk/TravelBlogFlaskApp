@@ -2,7 +2,7 @@ from flask import Flask, redirect, request
 from views import site
 import os
 
-app = Flask(__name__)
+app = Flask(__name__, static_folder='static', static_url_path='')
 
 app.secret_key = 'secret'
 
