@@ -13,6 +13,7 @@ Talisman(app, content_security_policy=None)
 
 Compress(app)
 
+@app.before_request
 def redirect_non_www():
     if request.headers.get('Host') == 'www.travel-blog-flask-app-9b69d584e4f3.herokuapp.com':
         new_url = request.url.replace('www.', '', 1)
