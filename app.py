@@ -13,7 +13,7 @@ Talisman(app, content_security_policy=None)
 
 Compress(app)
 
-canonical_domain = "https://travel-blog-flask-app-9b69d584e4f3.herokuapp.com/"
+canonical_domain = "travel-blog-flask-app-9b69d584e4f3.herokuapp.com"
 
 @app.before_request
 def redirect_heroku_domain():
