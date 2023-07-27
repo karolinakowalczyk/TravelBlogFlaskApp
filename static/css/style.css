@@ -10,7 +10,7 @@ html * {
 }
 
 #body-content {
-    min-height: calc(100vh - 49px);
+    min-height: calc(100vh - 154px);
     display: flex;
     flex-direction: column;
 }
@@ -20,6 +20,7 @@ footer {
     text-align: center;
     background-color: var(--primary);
     color: white;
+    padding: 20px 0 20px 0;
 }
 
 .navbar .navbar-brand {
@@ -30,11 +31,10 @@ footer {
 
 #site-body {
     margin-top: 140px;
-
 }
 
-@media screen and (max-width: 785px) {
+@media screen and (max-width: 576px) {
     #site-body {
-        margin-top: 12rem;
+        margin-top: 180px;
     }
 }
