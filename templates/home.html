@@ -8,13 +8,29 @@ Travel Blog Flask - 360 Travel Inspirations
 {% endblock %}
 {% block content %}
 <div>
-    <img src="{{ url_for('static', filename='images/pexels-jarod-barton.jpg')}}" class="main-image"
-        alt="venezia-landscape">
+    <img src="{{ url_for('static', filename='images/pexels-jarod-barton/pexels-jarod-barton.webp')}}" width="4088"
+        height="3066" class="main-image" alt="venezia-landscape" srcset="{{ url_for('static', filename='images/pexels-jarod-barton_300.webp')}} 300w, 
+        {{ url_for('static', filename='images/pexels-jarod-barton/pexels-jarod-barton_950.webp')}} 950w,
+        {{ url_for('static', filename='images/pexels-jarod-barton/pexels-jarod-barton_1320.webp')}} 1320w,
+        {{ url_for('static', filename='images/pexels-jarod-barton/pexels-jarod-barton_1600.webp')}} 1600w,
+        {{ url_for('static', filename='images/pexels-jarod-barton/pexels-jarod-barton_1840.webp')}} 1840w,
+        {{ url_for('static', filename='images/pexels-jarod-barton/pexels-jarod-barton_2048.webp')}} 2048w"
+        sizes="100vw">
 </div>
 <div class="d-flex content-div">
     <div class="half cropped">
-        <img src="{{ url_for('static', filename='images/pexels-tranmautritam.jpg')}}" class="sub-image main-image"
-            alt="girl with suitcase">
+        <img src="{{ url_for('static', filename='images/pexels-tranmautritam/pexels-tranmautritam.webp')}}" width="2725"
+            height="4088" class="sub-image main-image" alt="girl with suitcase" alt="venezia-landscape" srcset="{{ url_for('static', filename='images/pexels-tranmautritam/pexels-tranmautritam_300.webp')}} 300w, 
+                {{ url_for('static', filename='images/pexels-tranmautritam/pexels-tranmautritam_720.webp')}} 720w,
+                {{ url_for('static', filename='images/pexels-tranmautritam/pexels-tranmautritam_980.webp')}} 980w,
+                {{ url_for('static', filename='images/pexels-tranmautritam/pexels-tranmautritam_1180.webp')}} 1180w,
+                {{ url_for('static', filename='images/pexels-tranmautritam/pexels-tranmautritam_1350.webp')}} 1350w,
+                {{ url_for('static', filename='images/pexels-tranmautritam/pexels-tranmautritam_1500.webp')}} 1500w,
+                {{ url_for('static', filename='images/pexels-tranmautritam/pexels-tranmautritam_1650.webp')}} 1650w,
+                {{ url_for('static', filename='images/pexels-tranmautritam/pexels-tranmautritam_1800.webp')}} 1800w,
+                {{ url_for('static', filename='images/pexels-tranmautritam/pexels-tranmautritam_1930.webp')}} 1930w,
+                {{ url_for('static', filename='images/pexels-tranmautritam/pexels-tranmautritam_2048.webp')}} 2048w"
+            sizes="100vw">
     </div>
     <div class="half second d-flex flex-column justify-content-center">
         <h1><br /> 360 <span>&#176;</span> TRAVEL <br /> INSPIRATIONS</h1>
