@@ -9,6 +9,11 @@ html * {
     font-family: 'Sen', Arial, sans-serif;
 }
 
+h1 {
+    color: var(--primary) !important;
+    font-family: 'Playfair Display', serif;
+}
+
 #body-content {
     min-height: calc(100vh - 154px);
     display: flex;
@@ -37,4 +42,9 @@ footer {
     #site-body {
         margin-top: 180px;
     }
+}
+
+.post-img-container {
+    width: 286px;
+    height: 381px;
 }

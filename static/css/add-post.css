@@ -31,6 +31,10 @@
     height: auto;
 }
 
+.container {
+    margin-bottom: 20px;
+}
+
 @media screen and (max-width: 768px) {
     .uploaded-img {
         width: 100%;

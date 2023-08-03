@@ -14,12 +14,15 @@ Travel Blog Flask - Posts
     <div class="d-flex flex-wrap justify-content-center">
         {% for post in userPostsData %}
         <div class="card m-3 my-post-card">
-            {% if post["image"] %}
-            <img class="card-img-top" src={{post["image"]}} alt="post image">
-            {% else %}
-            <img class="card-img-top" src="{{ url_for('static', filename='images/no-image-icon.png')}}"
-                alt="post no image" />
-            {% endif %}
+            <div class="post-img-container">
+                {% if post["image"] %}
+                <img class="card-img-top" src={{post["image"]}} alt="post image">
+                {% else %}
+                <img class="card-img-top" src="{{ url_for('static', filename='images/no-image-icon.png')}}"
+                    alt="post no image" />
+                {% endif %}
+            </div>
+
             <div class="card-body d-flex flex-column">
                 <h5 class="card-title">{{ post["title"] }}</h5>
                 <p class="card-text">{{ post["author"] }}</p>
